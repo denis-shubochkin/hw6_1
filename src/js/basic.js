@@ -1,18 +1,15 @@
-export default function Character(name, type) {
+export default
+function Character(name, type) {
   const typeAr = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
-  try {
-    if (typeof name === 'string' && name.length >= 2 && name.length <= 10) {
-      this.name = name;
-    } else {
-      throw new Error('Имя персонажа должно быть строкой от 2 до 10 символов');
-    }
-    if (typeAr.includes(type)) {
-      this.type = type;
-    } else {
-      throw new Error('Класс персонажа должен быть одним из: Bowman, Swordsman, Magician, Daemon, Undead, Zombie');
-    }
-  } catch (e) {
-    return e;
+  if (typeof name === 'string' && name.length >= 2 && name.length <= 10) {
+    this.name = name;
+  } else {
+    throw new Error('Имя персонажа должно быть строкой от 2 до 10 символов');
+  }
+  if (typeAr.includes(type)) {
+    this.type = type;
+  } else {
+    throw new Error('Класс персонажа должен быть одним из: Bowman, Swordsman, Magician, Daemon, Undead, Zombie');
   }
   this.health = 100;
   this.level = 1;
@@ -44,3 +41,6 @@ export default function Character(name, type) {
       break;
   }
 }
+
+// const pers = new Character('И', 'Daemon');
+// console.log(pers);

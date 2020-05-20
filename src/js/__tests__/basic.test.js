@@ -14,21 +14,11 @@ test('pers created', () => {
 });
 
 test('Bad name of pers', () => {
-  try {
-    // eslint-disable-next-line no-unused-vars
-    const pers = new Character('И', 'Daemon');
-  } catch (e) {
-    expect(e).toThrow();
-  }
+  expect(() => { const pers = new Character('И', 'Daemon'); return pers; }).toThrow();
 });
 
 test('Bad type of pers', () => {
-  try {
-    // eslint-disable-next-line no-unused-vars
-    const pers = new Character('Иваныч', 'В');
-  } catch (e) {
-    expect(e).toThrow();
-  }
+  expect(() => { const pers = new Character('Иваныч', 'В'); return pers; }).toThrow();
 });
 
 test('2 pers created', () => {
